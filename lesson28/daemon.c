@@ -17,13 +17,13 @@ void work(int num) {
     // 捕捉到信号之后，获取系统时间，写入磁盘文件
     time_t tm = time(NULL);
     struct tm * loc = localtime(&tm);
-    char buf[1024];
+    // char buf[1024];
 
-    sprintf(buf, "%d-%d-%d %d:%d:%d\n",loc->tm_year,loc->tm_mon
-    ,loc->tm_mday, loc->tm_hour, loc->tm_min, loc->tm_sec);
+    // sprintf(buf, "%d-%d-%d %d:%d:%d\n",loc->tm_year,loc->tm_mon
+    // ,loc->tm_mday, loc->tm_hour, loc->tm_min, loc->tm_sec);
 
-    printf("%s\n", buf);
-    printf("hello world\n");
+    // printf("%s\n", buf);
+    // printf("hello world\n");
 
     char * str = asctime(loc);
     int fd = open("time.txt", O_RDWR | O_CREAT | O_APPEND, 0664);
